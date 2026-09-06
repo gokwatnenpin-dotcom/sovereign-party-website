@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { id: "news", label: "News" },
   { id: "events", label: "Events" },
   { id: "join", label: "Join Us" },
-] as const;
+];
 
 export const TICKER_ITEMS = [
   "National Rally — Lagos, Oct 12",
@@ -131,16 +131,7 @@ export const NEWS = [
   },
 ];
 
-export type PartyEvent = {
-  day: string;
-  month: string;
-  title: string;
-  location: string;
-  time: string;
-  mode: "In Person" | "Online";
-};
-
-export const EVENTS: PartyEvent[] = [
+export const EVENTS = [
   {
     day: "12",
     month: "OCT",
@@ -186,6 +177,6 @@ export const NIGERIAN_STATES = [
 
 export const DONATION_AMOUNTS = [1000, 5000, 25000];
 
-export function formatNaira(n: number): string {
+export function formatNaira(n) {
   return "₦" + n.toLocaleString("en-NG");
 }

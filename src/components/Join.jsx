@@ -1,29 +1,24 @@
 import { useState } from "react";
-import type { ChangeEvent, FormEvent } from "react";
 import { NIGERIAN_STATES } from "../data";
 import { useReveal } from "../hooks";
-
-type Errors = Partial<Record<"name" | "email" | "phone" | "state", string>>;
 
 const inputCls =
   "w-full rounded-[4px] border border-white/20 bg-navy px-4 py-3 text-[15px] text-white placeholder:text-white/35 transition-colors focus:border-gold focus:outline-none";
 
 export default function Join() {
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal();
   const [form, setForm] = useState({ name: "", email: "", phone: "", state: "", message: "" });
-  const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("idle");
 
-  const set = (k: keyof typeof form) => (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
+  const set = (k) => (e) => {
     setForm((f) => ({ ...f, [k]: e.target.value }));
     setErrors((err) => ({ ...err, [k]: undefined }));
   };
 
-  const submit = (e: FormEvent) => {
+  const submit = (e) => {
     e.preventDefault();
-    const err: Errors = {};
+    const err = {};
     if (form.name.trim().length < 2) err.name = "Please enter your full name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim()))
       err.email = "Enter a valid email address.";

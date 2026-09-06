@@ -1,6 +1,6 @@
 import { HERO_STATS } from "../data";
 
-export default function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
+export default function Hero({ onNavigate }) {
   return (
     <section id="home" aria-label="Introduction" className="relative flex min-h-[100vh] flex-col bg-navy">
       {/* Background */}

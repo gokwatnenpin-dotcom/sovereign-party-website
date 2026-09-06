@@ -4,10 +4,10 @@ import { useReveal } from "../hooks";
 import { SectionLabel } from "./shared";
 
 export default function Events() {
-  const ref = useReveal<HTMLDivElement>();
-  const [rsvps, setRsvps] = useState<Set<number>>(new Set());
+  const ref = useReveal();
+  const [rsvps, setRsvps] = useState(new Set());
 
-  const toggle = (i: number) =>
+  const toggle = (i) =>
     setRsvps((prev) => {
       const next = new Set(prev);
       if (next.has(i)) next.delete(i);

@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-
-export function EagleMark({ className = "h-10 w-10" }: { className?: string }) {
+export function EagleMark({ className = "h-10 w-10" }) {
   return (
     <span
       className={`relative inline-flex shrink-0 items-center justify-center rounded-full bg-gold ${className}`}
@@ -24,13 +22,7 @@ export function EagleMark({ className = "h-10 w-10" }: { className?: string }) {
   );
 }
 
-export function SectionLabel({
-  children,
-  dark = false,
-}: {
-  children: ReactNode;
-  dark?: boolean;
-}) {
+export function SectionLabel({ children, dark = false }) {
   return (
     <p
       className={`text-[12px] font-semibold uppercase leading-none tracking-[1.5px] ${

@@ -3,7 +3,7 @@ import { useReveal } from "../hooks";
 import { SectionLabel } from "./shared";
 
 export default function News() {
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal();
   return (
     <section id="news" aria-labelledby="news-heading" className="bg-white py-16 lg:py-24">
       <div ref={ref} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

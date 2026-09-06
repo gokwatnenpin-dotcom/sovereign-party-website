@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import { NAV_LINKS } from "../data";
 import { EagleMark } from "./shared";
 
-export default function Navbar({
-  active,
-  onNavigate,
-}: {
-  active: string;
-  onNavigate: (id: string) => void;
-}) {
+export default function Navbar({ active, onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -26,7 +20,7 @@ export default function Navbar({
     };
   }, [open ]);
 
-  const go = (id: string) => {
+  const go = (id) => {
     setOpen(false);
     onNavigate(id);
   };

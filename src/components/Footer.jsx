@@ -1,4 +1,3 @@
-import type { MouseEvent } from "react";
 import { EagleMark } from "./shared";
 
 const QUICK = [
@@ -8,7 +7,7 @@ const QUICK = [
   ["Leadership", "leadership"],
   ["News", "news"],
   ["Events", "events"],
-] as const;
+];
 
 const INVOLVED = [
   ["Join", "join"],
@@ -16,7 +15,7 @@ const INVOLVED = [
   ["Volunteer", "join"],
   ["Register to Vote", "join"],
   ["Download Manifesto", "policies"],
-] as const;
+];
 
 const SOCIALS = [
   {
@@ -37,8 +36,8 @@ const SOCIALS = [
   },
 ];
 
-export default function Footer({ onNavigate }: { onNavigate: (id: string) => void }) {
-  const go = (id: string) => (e: MouseEvent) => {
+export default function Footer({ onNavigate }) {
+  const go = (id) => (e) => {
     e.preventDefault();
     onNavigate(id);
   };

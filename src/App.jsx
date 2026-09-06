@@ -17,7 +17,7 @@ const SPY_IDS = ["home", "mission", "policies", "leadership", "news", "events", 
 export default function App() {
   const [active, setActive] = useState("home");
 
-  const scrollTo = useCallback((id: string) => {
+  const scrollTo = useCallback((id) => {
     const el = document.getElementById(id);
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - 72;
@@ -28,7 +28,7 @@ export default function App() {
   // Scroll-spy: highlight nav link for section in view
   useEffect(() => {
     const sections = SPY_IDS.map((id) => document.getElementById(id)).filter(
-      (el): el is HTMLElement => el !== null
+      (el) => el !== null
     );
     if (sections.length === 0) return;
     const io = new IntersectionObserver(

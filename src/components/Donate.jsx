@@ -3,8 +3,8 @@ import { DONATION_AMOUNTS, formatNaira } from "../data";
 import { useReveal } from "../hooks";
 
 export default function Donate() {
-  const ref = useReveal<HTMLDivElement>();
-  const [selected, setSelected] = useState<number | null>(5000);
+  const ref = useReveal();
+  const [selected, setSelected] = useState(5000);
   const [custom, setCustom] = useState("");
   const [donated, setDonated] = useState(false);
 

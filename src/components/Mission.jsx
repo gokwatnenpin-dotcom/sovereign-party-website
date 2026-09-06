@@ -3,7 +3,7 @@ import { useReveal } from "../hooks";
 import { SectionLabel } from "./shared";
 
 export default function Mission() {
-  const ref = useReveal<HTMLDivElement>();
+  const ref = useReveal();
   return (
     <section id="mission" aria-labelledby="mission-heading" className="bg-off-white py-16 lg:py-24">
       <div ref={ref} className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[40%_60%] lg:gap-16 lg:px-8">

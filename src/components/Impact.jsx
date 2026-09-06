@@ -1,16 +1,6 @@
 import { useCountUp, useVisible } from "../hooks";
 
-function Stat({
-  target,
-  format,
-  label,
-  started,
-}: {
-  target: number;
-  format: (n: number) => string;
-  label: string;
-  started: boolean;
-}) {
+function Stat({ target, format, label, started }) {
   const value = useCountUp(target, started);
   return (
     <div className="px-4 py-8 text-center sm:py-10">
@@ -25,7 +15,7 @@ function Stat({
 }
 
 export default function Impact() {
-  const { ref, visible } = useVisible<HTMLElement>(0.3);
+  const { ref, visible } = useVisible(0.3);
 
   return (
     <section

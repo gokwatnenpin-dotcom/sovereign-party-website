@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Adds .is-visible when element scrolls into view (once). */
-export function useReveal<T extends HTMLElement>(threshold = 0.15) {
-  const ref = useRef<T | null>(null);
+export function useReveal(threshold = 0.15) {
+  const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -18,7 +18,7 @@ export function useReveal<T extends HTMLElement>(threshold = 0.15) {
       { threshold }
     );
     // Reveal self + any nested .reveal children
-    const targets: Element[] = el.classList.contains("reveal")
+    const targets = el.classList.contains("reveal")
       ? [el]
       : Array.from(el.querySelectorAll(".reveal"));
     if (el.classList.contains("reveal")) {
@@ -31,13 +31,13 @@ export function useReveal<T extends HTMLElement>(threshold = 0.15) {
 }
 
 /** Animated count-up that starts when visible. */
-export function useCountUp(target: number, start: boolean, duration = 1800) {
+export function useCountUp(target, start, duration = 1800) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!start) return;
     let raf = 0;
     const t0 = performance.now();
-    const tick = (now: number) => {
+    const tick = (now) => {
       const p = Math.min(1, (now - t0) / duration);
       // ease-out cubic
       const eased = 1 - Math.pow(1 - p, 3);
@@ -51,8 +51,8 @@ export function useCountUp(target: number, start: boolean, duration = 1800) {
 }
 
 /** Observe once — returns [ref, visible]. */
-export function useVisible<T extends HTMLElement>(threshold = 0.3) {
-  const ref = useRef<T | null>(null);
+export function useVisible(threshold = 0.3) {
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -69,5 +69,5 @@ export function useVisible<T extends HTMLElement>(threshold = 0.3) {
     io.observe(el);
     return () => io.disconnect();
   }, [threshold]);
-  return { ref, visible } as const;
+  return { ref, visible };
 }
