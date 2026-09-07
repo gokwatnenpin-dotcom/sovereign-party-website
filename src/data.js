@@ -40,32 +40,32 @@ export const VALUES = [
 
 export const POLICIES = [
   {
-    icon: "💼",
+    icon: "economy",
     title: "Economic Reform",
     text: "Cut business registration to 48 hours. Grow the SME sector by 40% by 2028 through tax relief and access to credit.",
   },
   {
-    icon: "🏗",
+    icon: "infrastructure",
     title: "Infrastructure",
     text: "12,000km of paved roads connecting every region. Power to every ward by 2027 through grid and off-grid investment.",
   },
   {
-    icon: "🎓",
+    icon: "education",
     title: "Education First",
     text: "Free secondary education for every child. 500 new technical colleges funded to train the builders of tomorrow.",
   },
   {
-    icon: "🏥",
+    icon: "health",
     title: "Universal Healthcare",
     text: "One primary health center per ward. A zero maternal mortality initiative with trained birth attendants nationwide.",
   },
   {
-    icon: "⚖️",
+    icon: "justice",
     title: "Justice Reform",
     text: "End cash bail. Independent judiciary funding. A police accountability board with real powers and citizen oversight.",
   },
   {
-    icon: "🌱",
+    icon: "environment",
     title: "Green Sovereignty",
     text: "Renewable energy for 60% of the national grid. Zero open burning by 2030 and green jobs for 500,000 youths.",
   },

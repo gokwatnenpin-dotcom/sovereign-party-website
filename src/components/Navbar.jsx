@@ -30,9 +30,9 @@ export default function Navbar({ active, onNavigate }) {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled || open
-            ? "bg-navy shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
-            : "bg-gradient-to-b from-navy/90 to-navy/40"
-        } border-b border-white/[0.08]`}
+            ? "bg-bg-darker/90 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+            : "bg-bg-dark/95"
+        } border-b border-text-lighter/[0.08]`}
       >
         <nav
           aria-label="Primary"
@@ -50,10 +50,10 @@ export default function Navbar({ active, onNavigate }) {
           >
             <EagleMark className="h-10 w-10" />
             <span className="leading-none">
-              <span className="block font-display text-[15px] font-bold tracking-wide text-white sm:text-base">
+              <span className="block font-display text-[15px] font-bold tracking-wide text-primary-green sm:text-base">
                 THE SOVEREIGN PARTY
               </span>
-              <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[2px] text-gold">
+              <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[2px] text-text-lighter">
                 One Nation · Forward
               </span>
             </span>
@@ -70,17 +70,12 @@ export default function Navbar({ active, onNavigate }) {
                     go(l.id);
                   }}
                   aria-current={active === l.id ? "true" : undefined}
-                  className={`text-[13px] font-semibold uppercase tracking-[1px] transition-colors hover:text-gold-light ${
-                    active === l.id ? "text-gold" : "text-white/85"
+                  className={`text-[13px] font-semibold uppercase tracking-[1px] transition-colors hover:bg-bg-card/20 hover:text-text-lighter ${
+                    active === l.id ? "text-text-lighter underline underline-offset-2" : "text-text-lighter/80"
                   }`}
                 >
                   {l.label}
-                  <span
-                    aria-hidden="true"
-                    className={`mt-1 block h-[2px] transition-all ${
-                      active === l.id ? "w-full bg-gold" : "w-0 bg-gold"
-                    }`}
-                  />
+                  {/* Active link indicator removed - using underline instead */}
                 </a>
               </li>
             ))}
@@ -94,7 +89,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("donate");
               }}
-              className="rounded-[4px] bg-crimson px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-[#7e1422]"
+              className="rounded-[4px] border border-primary-green px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-text-lighter transition-colors hover:bg-primary-green/20 hover:text-text-lighter"
             >
               Donate Now
             </a>
@@ -104,7 +99,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("join");
               }}
-              className="rounded-[4px] bg-gold px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-navy transition-colors hover:bg-gold-light"
+              className="rounded-[4px] border border-primary-green px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-text-lighter transition-colors hover:bg-primary-green/20 hover:text-text-lighter"
             >
               Join the Movement
             </a>
@@ -116,7 +111,7 @@ export default function Navbar({ active, onNavigate }) {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] text-white hover:bg-white/10 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] text-text-lighter/80 hover:bg-bg-card/10 lg:hidden"
           >
             {open ? (
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
@@ -135,7 +130,7 @@ export default function Navbar({ active, onNavigate }) {
       <div
         aria-hidden="true"
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/60 transition-opacity lg:hidden ${
+        className={`fixed inset-0 z-40 bg-bg-darker/60 transition-opacity lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
@@ -144,21 +139,21 @@ export default function Navbar({ active, onNavigate }) {
       <aside
         aria-label="Mobile menu"
         aria-hidden={!open}
-        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-navy-deep shadow-2xl transition-transform duration-300 lg:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-bg-darker shadow-2xl transition-transform duration-300 lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-[72px] items-center justify-between border-b border-white/10 px-5">
+        <div className="flex h-[72px] items-center justify-between border-b border-text-lighter/10 px-5">
           <span className="flex items-center gap-2">
             <EagleMark className="h-8 w-8" />
-            <span className="font-display text-sm font-bold text-white">THE SOVEREIGN PARTY</span>
+            <span className="font-display text-sm font-bold text-text-lighter">THE SOVEREIGN PARTY</span>
           </span>
           <button
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close menu"
             tabIndex={open ? 0 : -1}
-            className="inline-flex h-10 w-10 items-center justify-center rounded text-white hover:bg-white/10"
+            className="inline-flex h-10 w-10 items-center justify-center rounded text-text-lighter/80 hover:bg-bg-card/10"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -178,8 +173,8 @@ export default function Navbar({ active, onNavigate }) {
                   }}
                   className={`block rounded-[4px] px-3 py-3 text-[15px] font-semibold uppercase tracking-[1px] transition-colors ${
                     active === l.id
-                      ? "bg-white/5 text-gold"
-                      : "text-white/85 hover:bg-white/5 hover:text-gold-light"
+                      ? "bg-text-lighter/10 text-primary-green underline underline-offset-2"
+                      : "text-text-lighter/80 hover:bg-bg-card/10 hover:text-text-lighter"
                   }`}
                 >
                   {l.label}
@@ -195,7 +190,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("donate");
               }}
-              className="rounded-[4px] bg-crimson px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-white"
+              className="rounded-[4px] border border-primary-green px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-text-lighter"
             >
               Donate Now
             </a>
@@ -206,12 +201,12 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("join");
               }}
-              className="rounded-[4px] bg-gold px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-navy"
+              className="rounded-[4px] border border-primary-green px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-text-lighter"
             >
               Join the Movement
             </a>
           </div>
-          <p className="mt-6 text-[12px] uppercase tracking-[2px] text-white/40">
+          <p className="mt-6 text-[12px] uppercase tracking-[2px] text-text-lighter/80">
             For the People. By the People.
           </p>
         </nav>

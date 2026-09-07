@@ -4,10 +4,10 @@ function Stat({ target, format, label, started }) {
   const value = useCountUp(target, started);
   return (
     <div className="px-4 py-8 text-center sm:py-10">
-      <p className="font-display text-4xl font-extrabold text-gold sm:text-5xl" aria-live="polite">
+      <p className="font-display text-4xl font-extrabold text-primary-green sm:text-5xl" aria-live="polite">
         {format(value)}
       </p>
-      <p className="mx-auto mt-3 max-w-[200px] text-[12px] font-semibold uppercase tracking-[1.5px] text-white/80">
+      <p className="mx-auto mt-3 max-w-[200px] text-[12px] font-semibold uppercase tracking-[1.5px] text-neutral-mid">
         {label}
       </p>
     </div>
@@ -22,17 +22,17 @@ export default function Impact() {
       ref={ref}
       aria-labelledby="impact-heading"
       className="relative overflow-hidden py-16 lg:py-24"
-      style={{ background: "linear-gradient(135deg, #a41c2e 0%, #5c1220 40%, #0b1a3b 100%)" }}
+      style={{ background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)" }}
     >
       <div aria-hidden="true" className="dot-texture absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-[12px] font-semibold uppercase tracking-[2px] text-gold-light">
+        <p className="text-center text-[12px] font-semibold uppercase tracking-[2px] text-neutral-dark">
           What We’ve Done
         </p>
         <h2 id="impact-heading" className="sr-only">
           Our impact in numbers
         </h2>
-        <div className="mt-6 grid grid-cols-2 divide-white/15 max-sm:gap-y-2 sm:divide-x lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 divide-neutral-dark/10 max-sm:gap-y-2 sm:divide-x lg:grid-cols-4">
           <Stat
             started={visible}
             target={2400000}
@@ -49,10 +49,10 @@ export default function Impact() {
           <Stat started={visible} target={47} label="Parliamentary Seats Won" format={(n) => String(n)} />
         </div>
         <blockquote className="mx-auto mt-10 max-w-3xl text-center">
-          <p className="font-display text-2xl font-bold italic leading-snug text-white sm:text-3xl">
+          <p className="font-display text-2xl font-bold italic leading-snug text-neutral-dark sm:text-3xl">
             “We didn’t come here to manage decline. We came to build a nation.”
           </p>
-          <cite className="mt-4 block text-[12px] font-semibold not-italic uppercase tracking-[2px] text-gold-light">
+          <cite className="mt-4 block text-[12px] font-semibold not-italic uppercase tracking-[2px] text-neutral-mid">
             — Emmanuel Adaora
           </cite>
         </blockquote>

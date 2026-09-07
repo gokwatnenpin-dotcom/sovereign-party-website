@@ -1,24 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0b1a3b;
-  --color-navy-mid: #122147;
-  --color-navy-deep: #070f1f;
+  --color-primary-green: #008751;  /* Nigerian flag green - used as accent */
+  --color-deep-green: #005C37;   /* Darker Nigerian green */
+  --color-bg-dark: #0F172A;      /* Very dark blue-gray (navy-900) */
+  --color-bg-darker: #081424;    /* Even darker */
+  --color-bg-card: #1E293B;      /* Dark slate gray (slate-800) */
+  --color-text-light: #F8FAFC;   /* Light slate (slate-50) */
+  --color-text-lighter: #FFFFFF; /* Pure white */
+  --color-text-muted: #94A3B8;   /* Slate-400 */
+  --color-off-white: #F4F4F4;
+  --color-light-green: #008751;
+  --color-neutral-dark: #1A1A1A;
+  --color-neutral-mid: #4A4A4A;
+  --color-ink: #1A1A1A;
   --color-gold: #c9a84c;
-  --color-gold-light: #f0d070;
-  --color-crimson: #a41c2e;
-  --color-crimson-dark: #7e1422;
-  --color-off-white: #f5f4f0;
-  --color-ink: #1a1a2e;
-  --color-muted: #5c6278;
-  --color-sand: #dcd9cf;
+  --color-navy: #1A1A1A;
 
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.12);
   --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-gold: 0 0 24px rgba(201, 168, 76, 0.25);
 
   --animate-ticker: ticker 32s linear infinite;
   --animate-fade-up: fade-up 0.7s ease both;
@@ -41,15 +44,15 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: #ffffff;
-  color: var(--color-ink);
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-navy);
+  background: var(--color-primary-green);
+  color: var(--color-text-lighter);
 }
 
 /* Ticker */
@@ -68,7 +71,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-primary-green);
   outline-offset: 2px;
 }
 

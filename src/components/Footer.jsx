@@ -42,22 +42,22 @@ export default function Footer({ onNavigate }) {
     onNavigate(id);
   };
   return (
-    <footer className="bg-navy-deep text-white/70">
+    <footer className="bg-bg-dark">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         {/* Col 1 */}
         <div>
           <p className="flex items-center gap-3">
             <EagleMark className="h-10 w-10" />
-            <span className="font-display text-base font-bold leading-tight text-white">
+            <span className="font-display text-base font-bold leading-tight text-text-lighter">
               THE SOVEREIGN
               <br />
               PARTY
             </span>
           </p>
-          <p className="mt-4 font-display text-[15px] italic text-gold">
+          <p className="mt-4 font-display text-[15px] italic text-text-lighter/90">
             “One Nation. One Purpose. Forward.”
           </p>
-          <p className="mt-2 text-sm leading-relaxed">
+          <p className="mt-2 text-sm leading-relaxed text-text-lighter/80">
             For the People. By the People. Founded 2018.
           </p>
           <ul className="mt-5 flex gap-2.5" aria-label="Social media">
@@ -67,7 +67,7 @@ export default function Footer({ onNavigate }) {
                   href="#home"
                   onClick={(e) => e.preventDefault()}
                   aria-label={`The Sovereign Party on ${s.name}`}
-                  className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-white/8 text-white/75 transition-colors hover:bg-gold hover:text-navy"
+                  className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-bg-card/20 text-text-lighter/80 transition-colors hover:bg-bg-card/30 hover:text-text-lighter"
                 >
                   <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
                     <path d={s.path} />
@@ -80,11 +80,11 @@ export default function Footer({ onNavigate }) {
 
         {/* Col 2 */}
         <nav aria-label="Quick links">
-          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-gold">Quick Links</h3>
+          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-text-lighter/80">Quick Links</h3>
           <ul className="mt-4 space-y-2.5 text-[15px]">
             {QUICK.map(([label, id]) => (
               <li key={id + label}>
-                <a href={`#${id}`} onClick={go(id)} className="transition-colors hover:text-gold-light">
+                <a href={`#${id}`} onClick={go(id)} className="text-white transition-colors hover:underline">
                   {label}
                 </a>
               </li>
@@ -94,11 +94,11 @@ export default function Footer({ onNavigate }) {
 
         {/* Col 3 */}
         <nav aria-label="Get involved">
-          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-gold">Get Involved</h3>
+          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-text-lighter/80">Get Involved</h3>
           <ul className="mt-4 space-y-2.5 text-[15px]">
             {INVOLVED.map(([label, id]) => (
               <li key={label}>
-                <a href={`#${id}`} onClick={go(id)} className="transition-colors hover:text-gold-light">
+                <a href={`#${id}`} onClick={go(id)} className="text-white transition-colors hover:underline">
                   {label}
                 </a>
               </li>
@@ -108,8 +108,8 @@ export default function Footer({ onNavigate }) {
 
         {/* Col 4 */}
         <div>
-          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-gold">Contact</h3>
-          <address className="mt-4 space-y-3 text-[14px] not-italic leading-relaxed">
+          <h3 className="text-[12px] font-bold uppercase tracking-[2px] text-text-lighter/80">Contact</h3>
+          <address className="mt-4 space-y-3 text-[14px] not-italic leading-relaxed text-text-lighter/80">
             <p>
               National Secretariat
               <br />
@@ -118,16 +118,16 @@ export default function Footer({ onNavigate }) {
               Abuja, FCT, Nigeria
             </p>
             <p>
-              <a href="tel:+2349000000000" className="hover:text-gold-light">
+              <a href="tel:+2349000000000" className="text-white hover:underline">
                 +234 (0) 900 000 0000
               </a>
               <br />
-              <a href="mailto:info@sovereignparty.ng" className="hover:text-gold-light">
+              <a href="mailto:info@sovereignparty.ng" className="text-white hover:underline">
                 info@sovereignparty.ng
               </a>
             </p>
             <p>
-              <a href="#home" onClick={(e) => e.preventDefault()} className="text-gold underline underline-offset-4 hover:text-gold-light">
+              <a href="#home" onClick={(e) => e.preventDefault()} className="text-white underline underline-offset-4">
                 Find us on the map →
               </a>
             </p>
@@ -135,21 +135,21 @@ export default function Footer({ onNavigate }) {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <p className="mx-auto max-w-7xl px-4 py-5 text-center text-[13px] leading-relaxed text-white/50 sm:px-6">
+      <div className="border-t border-bg-card/20">
+        <p className="mx-auto max-w-7xl px-4 py-5 text-center text-[13px] leading-relaxed text-text-lighter/80 sm:px-6">
           The Sovereign Party is a registered political organization. All
           electoral activities comply with the Independent National Electoral
           Commission (INEC) guidelines.
         </p>
       </div>
 
-      <div className="border-t border-white/10 bg-black/30">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-[13px] text-white/50 sm:px-6 md:flex-row lg:px-8">
+      <div className="border-t border-bg-card/20">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-[13px] text-text-lighter/80 sm:px-6 md:flex-row lg:px-8">
           <p>© 2026 The Sovereign Party. All rights reserved.</p>
           <ul className="flex gap-5">
             {["Privacy Policy", "Terms", "Media Kit"].map((l) => (
               <li key={l}>
-                <a href="#home" onClick={(e) => e.preventDefault()} className="hover:text-gold-light">
+                <a href="#home" onClick={(e) => e.preventDefault()} className="text-white hover:underline">
                   {l}
                 </a>
               </li>
