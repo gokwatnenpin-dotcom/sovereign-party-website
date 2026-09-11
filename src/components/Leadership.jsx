@@ -34,7 +34,7 @@ export default function Leadership() {
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
-            <span className="absolute left-5 top-5 rounded-[4px] bg-paper px-3 py-1.5 text-[11px] font-bold uppercase tracking-[1.5px] text-ink shadow-card">
+            <span className="absolute left-5 top-5 rounded-[4px] bg-accent px-3 py-1.5 text-[11px] font-bold uppercase tracking-[1.5px] text-white shadow-card">
               Presidential Candidate
             </span>
           </div>
@@ -48,7 +48,7 @@ export default function Leadership() {
             <p className="mt-1 text-sm font-semibold uppercase tracking-[1.5px] text-muted">
               Presidential Candidate & Party Chairman
             </p>
-            <blockquote className="mt-6 border-l-[3px] border-accent/30 pl-5 font-display text-[22px] font-bold italic leading-snug text-ink sm:text-2xl">
+            <blockquote className="mt-6 border-l-[3px] border-accent pl-5 font-display text-[22px] font-bold italic leading-snug text-ink sm:text-2xl">
               &ldquo;A nation that invests in its people cannot fail.&rdquo;
             </blockquote>
             <p className="mt-6 text-[15px] leading-[1.75] text-muted">

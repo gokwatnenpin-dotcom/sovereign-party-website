@@ -32,7 +32,9 @@ export default function Policies() {
               className="reveal group border border-line bg-paper p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
               style={{ transitionDelay: `${(i % 3) * 70}ms` }}
             >
-              <PolicyIcon type={p.icon} className="h-8 w-8 text-ink" />
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-[4px] bg-accent-soft">
+                <PolicyIcon type={p.icon} className="h-6 w-6 text-accent" />
+              </span>
               <p className="mt-4 text-[11px] font-semibold uppercase tracking-[2px] text-muted">
                 Point {String(i + 1).padStart(2, "0")}
               </p>

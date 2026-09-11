@@ -5,7 +5,7 @@ function Stat({ target, format, label, started }) {
   return (
     <div className="px-4 py-8 text-center sm:py-10">
       <p
-        className="font-display text-4xl font-bold text-ink sm:text-5xl"
+        className="font-display text-4xl font-bold text-accent sm:text-5xl"
         aria-live="polite"
       >
         {format(value)}

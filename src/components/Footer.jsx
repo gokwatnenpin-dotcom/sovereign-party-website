@@ -42,7 +42,7 @@ export default function Footer({ onNavigate }) {
     onNavigate(id);
   };
   return (
-    <footer className="bg-ink">
+    <footer className="border-t-4 border-accent bg-ink">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         {/* Col 1 */}
         <div>
@@ -67,7 +67,7 @@ export default function Footer({ onNavigate }) {
                   href="#home"
                   onClick={(e) => e.preventDefault()}
                   aria-label={`The Sovereign Party on ${s.name}`}
-                  className="flex h-10 w-10 items-center justify-center text-white/50 transition-colors hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center text-white/50 transition-colors hover:text-accent"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -94,7 +94,7 @@ export default function Footer({ onNavigate }) {
                 <a
                   href={`#${id}`}
                   onClick={go(id)}
-                  className="text-white/80 transition-colors hover:text-white"
+                  className="text-white/80 transition-colors hover:text-accent"
                 >
                   {label}
                 </a>
@@ -114,7 +114,7 @@ export default function Footer({ onNavigate }) {
                 <a
                   href={`#${id}`}
                   onClick={go(id)}
-                  className="text-white/80 transition-colors hover:text-white"
+                  className="text-white/80 transition-colors hover:text-accent"
                 >
                   {label}
                 </a>

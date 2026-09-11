@@ -40,7 +40,7 @@ export default function News() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <span className="absolute left-4 top-4 rounded-[4px] bg-paper px-2.5 py-1 text-[11px] font-bold uppercase tracking-[1.5px] text-ink shadow-card">
+                <span className="absolute left-4 top-4 rounded-[4px] bg-accent text-[11px] font-bold uppercase tracking-[1.5px] text-white shadow-card">
                   {n.category}
                 </span>
               </div>

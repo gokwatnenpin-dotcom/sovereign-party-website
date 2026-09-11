@@ -3,12 +3,13 @@
 @theme {
   --color-ink: #1a1a1a;
   --color-muted: #4a4a4a;
-  --color-soft: #f5f5f3;
+  --color-soft: #f1f7f3;
   --color-paper: #ffffff;
-  --color-line: #e3e3df;
+  --color-line: #dce8e0;
+  --color-mist: #f7fbf8;
   --color-accent: #006b45;
   --color-accent-ink: #024d32;
-  --color-accent-soft: #e7f1ec;
+  --color-accent-soft: #ddf0e6;
 
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -45,6 +46,14 @@ body {
 ::selection {
   background: var(--color-accent);
   color: #ffffff;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(100deg, var(--color-accent) 0%, #0d9e6c 55%, #14b57e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .ticker-track {

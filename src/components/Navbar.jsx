@@ -70,7 +70,7 @@ export default function Navbar({ active, onNavigate }) {
                   aria-current={active === l.id ? "true" : undefined}
                   className={`text-[13px] uppercase tracking-[1px] transition-colors hover:text-ink ${
                     active === l.id
-                      ? "font-bold text-ink underline underline-offset-[6px]"
+                      ? "font-bold text-accent underline decoration-accent underline-offset-[6px]"
                       : "font-medium text-muted"
                   }`}
                 >

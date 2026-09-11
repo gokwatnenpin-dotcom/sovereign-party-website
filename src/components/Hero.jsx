@@ -14,7 +14,7 @@ export default function Hero({ onNavigate }) {
           </span>
 
           <h1 className="mt-6 font-display text-[40px] font-extrabold leading-[1.05] text-ink sm:text-[54px] lg:text-[68px]">
-            A Government That Works
+            A Government That <span className="text-accent-gradient">Works</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-[16px] leading-[1.75] text-muted sm:text-lg">
@@ -67,11 +67,11 @@ export default function Hero({ onNavigate }) {
       </div>
 
       {/* Stats strip */}
-      <div className="border-y border-line bg-paper">
+      <div className="border-y border-accent/15 bg-mist">
         <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-4 lg:gap-8 lg:px-8">
           {HERO_STATS.map((s) => (
             <div key={s.label}>
-              <dd className="font-display text-3xl font-bold text-ink">
+              <dd className="font-display text-3xl font-bold text-accent">
                 {s.value}
               </dd>
               <dt className="mt-1 block text-[11px] font-semibold uppercase tracking-[1.5px] text-muted">

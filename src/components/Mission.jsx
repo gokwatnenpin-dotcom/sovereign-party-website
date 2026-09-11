@@ -37,10 +37,10 @@ export default function Mission() {
             power, and institutions that cannot be bought. One Nation. One
             Purpose. Forward.
           </p>
-          <div className="mt-8 border-l-[3px] border-ink bg-soft p-5">
+          <div className="mt-8 border-l-[3px] border-accent bg-soft p-5">
             <span
               aria-hidden="true"
-              className="font-display text-4xl font-extrabold text-ink"
+              className="font-display text-4xl font-extrabold text-accent"
             >
               8
             </span>

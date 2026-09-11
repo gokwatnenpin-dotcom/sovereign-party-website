@@ -46,7 +46,7 @@ export default function Events() {
               >
                 {/* Date block */}
                 <div className="flex items-center gap-4 sm:w-24 sm:flex-col sm:gap-0 sm:text-center">
-                  <span className="font-display text-4xl font-bold leading-none text-ink">
+                  <span className="font-display text-4xl font-bold leading-none text-accent">
                     {e.day}
                   </span>
                   <span className="text-[12px] font-bold uppercase tracking-[2px] text-muted">

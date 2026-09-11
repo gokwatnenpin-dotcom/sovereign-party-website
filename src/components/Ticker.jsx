@@ -25,7 +25,7 @@ export default function Ticker() {
                   className="flex items-center whitespace-nowrap text-[13px] font-semibold uppercase tracking-[1.2px] text-muted"
                 >
                   <span className="px-6">{item}</span>
-                  <span aria-hidden="true" className="text-line">
+                  <span aria-hidden="true" className="text-accent/40">
                     ◆
                   </span>
                 </span>
