@@ -12,7 +12,15 @@ import Join from "./components/Join";
 import Donate from "./components/Donate";
 import Footer from "./components/Footer";
 
-const SPY_IDS = ["home", "mission", "policies", "leadership", "news", "events", "join"];
+const SPY_IDS = [
+  "home",
+  "mission",
+  "policies",
+  "leadership",
+  "news",
+  "events",
+  "join",
+];
 
 export default function App() {
   const [active, setActive] = useState("home");
@@ -25,11 +33,10 @@ export default function App() {
     window.history.replaceState(null, "", `#${id}`);
   }, []);
 
-  // Scroll-spy: highlight nav link for section in view
   useEffect(() => {
-    const sections = SPY_IDS.map((id) => document.getElementById(id)).filter(
-      (el) => el !== null
-    );
+    const sections = SPY_IDS.map((id) =>
+      document.getElementById(id),
+    ).filter((el) => el !== null);
     if (sections.length === 0) return;
     const io = new IntersectionObserver(
       (entries) => {
@@ -37,13 +44,12 @@ export default function App() {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
   }, []);
 
-  // Handle initial hash (e.g. direct link to #policies)
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (hash && SPY_IDS.includes(hash)) {
@@ -53,14 +59,14 @@ export default function App() {
   }, [scrollTo]);
 
   return (
-    <div className="min-h-screen bg-white font-body text-ink">
+    <div className="min-h-screen bg-paper font-body text-ink">
       <a
         href="#mission"
         onClick={(e) => {
           e.preventDefault();
           scrollTo("mission");
         }}
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-gold focus:px-4 focus:py-2 focus:font-bold focus:text-navy"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:font-bold focus:text-white"
       >
         Skip to content
       </a>

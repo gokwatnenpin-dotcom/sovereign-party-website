@@ -18,7 +18,7 @@ export default function Navbar({ active, onNavigate }) {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open ]);
+  }, [open]);
 
   const go = (id) => {
     setOpen(false);
@@ -28,11 +28,9 @@ export default function Navbar({ active, onNavigate }) {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled || open
-            ? "bg-bg-darker/90 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
-            : "bg-bg-dark/95"
-        } border-b border-text-lighter/[0.08]`}
+        className={`fixed inset-x-0 top-0 z-50 border-b border-line bg-paper transition-shadow duration-300 ${
+          scrolled || open ? "shadow-sm" : ""
+        }`}
       >
         <nav
           aria-label="Primary"
@@ -50,10 +48,10 @@ export default function Navbar({ active, onNavigate }) {
           >
             <EagleMark className="h-10 w-10" />
             <span className="leading-none">
-              <span className="block font-display text-[15px] font-bold tracking-wide text-primary-green sm:text-base">
+              <span className="block font-display text-[15px] font-bold tracking-wide text-ink sm:text-base">
                 THE SOVEREIGN PARTY
               </span>
-              <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[2px] text-text-lighter">
+              <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[2px] text-muted">
                 One Nation · Forward
               </span>
             </span>
@@ -70,12 +68,13 @@ export default function Navbar({ active, onNavigate }) {
                     go(l.id);
                   }}
                   aria-current={active === l.id ? "true" : undefined}
-                  className={`text-[13px] font-semibold uppercase tracking-[1px] transition-colors hover:bg-bg-card/20 hover:text-text-lighter ${
-                    active === l.id ? "text-text-lighter underline underline-offset-2" : "text-text-lighter/80"
+                  className={`text-[13px] uppercase tracking-[1px] transition-colors hover:text-ink ${
+                    active === l.id
+                      ? "font-bold text-ink underline underline-offset-[6px]"
+                      : "font-medium text-muted"
                   }`}
                 >
                   {l.label}
-                  {/* Active link indicator removed - using underline instead */}
                 </a>
               </li>
             ))}
@@ -89,7 +88,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("donate");
               }}
-              className="rounded-[4px] border border-primary-green px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-text-lighter transition-colors hover:bg-primary-green/20 hover:text-text-lighter"
+              className="rounded-[4px] border border-ink/20 px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-ink transition-colors hover:border-ink"
             >
               Donate Now
             </a>
@@ -99,7 +98,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("join");
               }}
-              className="rounded-[4px] border border-primary-green px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-text-lighter transition-colors hover:bg-primary-green/20 hover:text-text-lighter"
+              className="rounded-[4px] bg-accent px-4 py-2.5 text-[12px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-accent-ink"
             >
               Join the Movement
             </a>
@@ -111,15 +110,30 @@ export default function Navbar({ active, onNavigate }) {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] text-text-lighter/80 hover:bg-bg-card/10 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center text-ink lg:hidden"
           >
             {open ? (
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
               </svg>
             ) : (
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              <svg
+                viewBox="0 0 24 24"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  strokeLinecap="round"
+                />
               </svg>
             )}
           </button>
@@ -130,7 +144,7 @@ export default function Navbar({ active, onNavigate }) {
       <div
         aria-hidden="true"
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 bg-bg-darker/60 transition-opacity lg:hidden ${
+        className={`fixed inset-0 z-40 bg-ink/40 transition-opacity lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
@@ -139,23 +153,31 @@ export default function Navbar({ active, onNavigate }) {
       <aside
         aria-label="Mobile menu"
         aria-hidden={!open}
-        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-bg-darker shadow-2xl transition-transform duration-300 lg:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-paper shadow-xl transition-transform duration-300 lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-[72px] items-center justify-between border-b border-text-lighter/10 px-5">
+        <div className="flex h-[72px] items-center justify-between border-b border-line px-5">
           <span className="flex items-center gap-2">
             <EagleMark className="h-8 w-8" />
-            <span className="font-display text-sm font-bold text-text-lighter">THE SOVEREIGN PARTY</span>
+            <span className="font-display text-sm font-bold text-ink">
+              THE SOVEREIGN PARTY
+            </span>
           </span>
           <button
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close menu"
             tabIndex={open ? 0 : -1}
-            className="inline-flex h-10 w-10 items-center justify-center rounded text-text-lighter/80 hover:bg-bg-card/10"
+            className="inline-flex h-10 w-10 items-center justify-center text-ink"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
             </svg>
           </button>
@@ -171,10 +193,10 @@ export default function Navbar({ active, onNavigate }) {
                     e.preventDefault();
                     go(l.id);
                   }}
-                  className={`block rounded-[4px] px-3 py-3 text-[15px] font-semibold uppercase tracking-[1px] transition-colors ${
+                  className={`block rounded-[4px] px-3 py-3 text-[15px] uppercase tracking-[1px] transition-colors ${
                     active === l.id
-                      ? "bg-text-lighter/10 text-primary-green underline underline-offset-2"
-                      : "text-text-lighter/80 hover:bg-bg-card/10 hover:text-text-lighter"
+                      ? "bg-accent-soft font-bold text-accent underline underline-offset-[6px]"
+                      : "font-semibold text-muted hover:bg-soft hover:text-ink"
                   }`}
                 >
                   {l.label}
@@ -190,7 +212,7 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("donate");
               }}
-              className="rounded-[4px] border border-primary-green px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-text-lighter"
+              className="rounded-[4px] border border-ink/20 px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-ink"
             >
               Donate Now
             </a>
@@ -201,12 +223,12 @@ export default function Navbar({ active, onNavigate }) {
                 e.preventDefault();
                 go("join");
               }}
-              className="rounded-[4px] border border-primary-green px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-text-lighter"
+              className="rounded-[4px] bg-accent px-4 py-3 text-center text-[13px] font-bold uppercase tracking-[1px] text-white"
             >
               Join the Movement
             </a>
           </div>
-          <p className="mt-6 text-[12px] uppercase tracking-[2px] text-text-lighter/80">
+          <p className="mt-6 text-[12px] uppercase tracking-[2px] text-muted">
             For the People. By the People.
           </p>
         </nav>

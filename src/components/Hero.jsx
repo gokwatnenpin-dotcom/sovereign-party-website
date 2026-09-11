@@ -2,37 +2,27 @@ import { HERO_STATS } from "../data";
 
 export default function Hero({ onNavigate }) {
   return (
-    <section id="home" aria-label="Introduction" className="relative flex min-h-[100vh] flex-col bg-bg-dark">
-      {/* Background image with luminosity blend */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <img
-          src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=1200&q=80"
-          alt="Aerial view of Nigerian city"
-          className="h-full w-full object-cover mix-blend-luminosity opacity-15"
-          fetchPriority="high"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pt-36 z-1">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary-green/20 bg-primary-green/10 py-1.5 pl-1.5 pr-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-text-lighter backdrop-blur">
-            <span className="rounded-full bg-primary-green/20 px-2.5 py-1 text-[11px] font-bold tracking-[1px] text-text-lighter">
+    <section id="home" aria-label="Introduction" className="relative bg-paper">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-12 pt-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-8 lg:pt-32 lg:pb-14">
+        {/* Copy */}
+        <div className="max-w-xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent-soft py-1.5 pl-1.5 pr-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-accent backdrop-blur">
+            <span className="rounded-full bg-accent/15 px-2.5 py-1 text-[11px] font-bold tracking-[1px] text-accent">
               2026
             </span>
-            General Election 2026
+            General Election
           </span>
 
-          <h1 className="mt-6 font-display text-[42px] font-extrabold leading-[1.05] text-text-lighter sm:text-[56px] lg:text-[72px]">
+          <h1 className="mt-6 font-display text-[40px] font-extrabold leading-[1.05] text-ink sm:text-[54px] lg:text-[68px]">
             A Government That Works
           </h1>
 
-          <p className="mt-6 max-w-xl text-[16px] leading-[1.75] text-text-lighter/90 sm:text-lg">
+          <p className="mt-6 max-w-xl text-[16px] leading-[1.75] text-muted sm:text-lg">
             The Sovereign Party is committed to economic reform, transparent
             governance, and a future where no community is left behind.
           </p>
 
-          <p className="mt-3 text-[13px] font-semibold uppercase tracking-[2px] text-text-lighter/80">
+          <p className="mt-3 text-[12px] font-semibold uppercase tracking-[2px] text-muted/80">
             For the People. By the People. — Est. 2018
           </p>
 
@@ -40,17 +30,17 @@ export default function Hero({ onNavigate }) {
             <button
               type="button"
               onClick={() => onNavigate("policies")}
-              className="rounded-[4px] bg-primary-green/20 px-8 py-4 text-[13px] font-bold uppercase tracking-[1.5px] text-text-lighter"
+              className="rounded-[4px] bg-accent px-8 py-4 text-[13px] font-bold uppercase tracking-[1.5px] text-white transition-colors hover:bg-accent-ink"
             >
               Read Our Manifesto
             </button>
             <button
               type="button"
               onClick={() => onNavigate("leadership")}
-              className="group inline-flex items-center justify-center gap-3 rounded-[4px] border border-primary-green/30 px-8 py-4 text-[13px] font-bold uppercase tracking-[1.5px] text-text-lighter transition-colors hover:bg-primary-green/30 hover:text-text-lighter"
+              className="group inline-flex items-center justify-center gap-3 rounded-[4px] border border-ink/20 px-8 py-4 text-[13px] font-bold uppercase tracking-[1.5px] text-ink transition-colors hover:border-ink"
             >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-text-lighter/10 transition-colors group-hover:bg-primary-green/20 group-hover:text-text-lighter">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-soft transition-colors group-hover:bg-line">
+                <svg viewBox="0 0 24 24" className="h-4 w-4 text-ink" fill="currentColor" aria-hidden="true">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </span>
@@ -59,38 +49,34 @@ export default function Hero({ onNavigate }) {
           </div>
         </div>
 
-        {/* Floating candidate card */}
-        <aside
-          aria-label="Candidate spotlight"
-          className="mt-12 flex max-w-md items-center gap-4 rounded-[8px] border border-primary-green/30 bg-bg-card/80 backdrop-blur p-4 lg:absolute lg:bottom-36 lg:right-8 lg:mt-0 lg:w-[340px]"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=300&q=80&fit=crop"
-            alt="Portrait of Emmanuel Adaora, presidential candidate"
-            className="h-20 w-20 shrink-0 rounded-[8px] border border-primary-green/30 object-cover"
-            loading="eager"
+        {/* Portrait */}
+        <div className="relative mx-auto w-full max-w-[460px] lg:mx-0 lg:max-w-none">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-12 top-8 bottom-8 rounded-full bg-accent-soft/60 blur-3xl"
           />
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[2px] text-text-lighter">
-              Presidential Candidate
-            </p>
-            <p className="mt-1 font-display text-lg font-bold text-text-lighter">Emmanuel Adaora</p>
-            <p className="mt-1 text-[13px] italic leading-snug text-text-lighter/80">
-              “A nation that invests in its people cannot fail.”
-            </p>
+          <div className="hero-photo relative">
+            <img
+              src="https://images.unsplash.com/photo-1655354337852-78c57bfdbb05?w=1200&q=80&auto=format&fit=crop"
+              alt="Portrait of an elderly Nigerian man in traditional head scarf"
+              className="aspect-[4/5] w-full object-cover"
+              fetchPriority="high"
+            />
           </div>
-        </aside>
+        </div>
       </div>
 
-      {/* Bottom stat strip */}
-      <div className="relative border-t border-primary-green/30">
-        <dl className="mx-auto grid max-w-7xl grid-cols-2 divide-primary-green/30 px-4 sm:px-6 lg:grid-cols-4 lg:divide-x lg:px-8">
+      {/* Stats strip */}
+      <div className="border-y border-line bg-paper">
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-4 lg:gap-8 lg:px-8">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="px-2 py-5 lg:px-8">
-              <dt className="order-2 mt-1 block text-[11px] font-semibold uppercase tracking-[1.5px] text-text-lighter/80">
+            <div key={s.label}>
+              <dd className="font-display text-3xl font-bold text-ink">
+                {s.value}
+              </dd>
+              <dt className="mt-1 block text-[11px] font-semibold uppercase tracking-[1.5px] text-muted">
                 {s.label}
               </dt>
-              <dd className="font-display text-3xl font-extrabold text-text-lighter">{s.value}</dd>
             </div>
           ))}
         </dl>
